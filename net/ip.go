@@ -1,4 +1,5 @@
 // y net © 2019, Ramsey Dow. All rights reserved.
+// SPDX-License-Identifier: BSD-2-Clause
 
 package net
 
@@ -12,7 +13,7 @@ import (
 	ymath "github.com/yesmar/y/math"
 )
 
-// Nips computes the number of IP addresses in the given IPv4 CIDR.
+// Nipsv4 computes the number of IP addresses in the given IPv4 CIDR.
 func Nipsv4(cidr *net.IPNet) (uint64, error) {
 	if cidr == nil {
 		return 0, errors.New("nil net.IPNet")
@@ -26,7 +27,7 @@ func Nipsv4(cidr *net.IPNet) (uint64, error) {
 	return uint64(c), nil
 }
 
-// Nips computes the number of IP addresses in the given IPv6 CIDR.
+// Nipsv6 computes the number of IP addresses in the given IPv6 CIDR.
 func Nipsv6(cidr *net.IPNet) (*big.Int, error) {
 	if cidr == nil {
 		return nil, errors.New("nil net.IPNet")
