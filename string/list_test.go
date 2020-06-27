@@ -8,7 +8,7 @@ import "testing"
 func TestDelimitedList(t *testing.T) {
 	xs := []string{"Dagger", "Sword", "Spear"}
 	expected := "Dagger; Sword; and Spear"
-	actual := DelimitedList(';', xs)
+	actual := DelimitedList(';', true, xs)
 	if actual != expected {
 		t.Errorf("Expected %v, actual %v\n", expected, actual)
 	}
@@ -17,7 +17,7 @@ func TestDelimitedList(t *testing.T) {
 func TestList(t *testing.T) {
 	xs := []string{"Dagger", "Sword", "Spear"}
 	expected := "Dagger, Sword, and Spear"
-	actual := List(xs)
+	actual := List(true, xs)
 	if actual != expected {
 		t.Errorf("Expected %v, actual %v\n", expected, actual)
 	}

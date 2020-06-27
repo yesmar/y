@@ -7,7 +7,7 @@ import "strings"
 
 // DelimitedList returns a list of the elements in xs
 // as a string, delimited by delim.
-func DelimitedList(delim rune, xs []string) string {
+func DelimitedList(delim rune, conjunction bool, xs []string) string {
 	var sb strings.Builder
 	for i, s := range xs {
 		sb.WriteString(s)
@@ -15,7 +15,7 @@ func DelimitedList(delim rune, xs []string) string {
 			sb.WriteRune(delim)
 			sb.WriteRune(' ')
 		}
-		if i == len(xs)-2 {
+		if conjunction && i == len(xs)-2 {
 			sb.WriteString("and ")
 		}
 	}
@@ -24,6 +24,6 @@ func DelimitedList(delim rune, xs []string) string {
 
 // List returns a comma-delimited list of the elements
 // in xs as a string.
-func List(xs []string) string {
-	return DelimitedList(',', xs)
+func List(conjunction bool, xs []string) string {
+	return DelimitedList(',', conjunction, xs)
 }
