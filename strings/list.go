@@ -1,7 +1,7 @@
 // y string © 2019, Ramsey Dow. All rights reserved.
 // SPDX-License-Identifier: BSD-2-Clause
 
-package string
+package strings
 
 import "strings"
 
