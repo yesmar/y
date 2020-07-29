@@ -29,3 +29,24 @@ func TestNilBigFloatToBigInt(t *testing.T) {
 		t.Error("Expected nil, got", actual)
 	}
 }
+
+func TestRoundup(t *testing.T) {
+	testpairs := []struct {
+		input    float64
+		expected float64
+	}{
+		{input: 4.02, expected: 4.1},
+		{input: 4.00, expected: 4.0},
+		{input: 6.4467, expected: 6.5},
+		{input: 8.265, expected: 8.3},
+		{input: 4.8546, expected: 4.9},
+		{input: 1.200003, expected: 1.2},
+	}
+
+	for _, pair := range testpairs {
+		actual := Roundup(pair.input)
+		if actual != pair.expected {
+			t.Errorf("%v: expected %v, got %v", pair.input, pair.expected, actual)
+		}
+	}
+}
