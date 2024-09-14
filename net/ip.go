@@ -1,4 +1,4 @@
-// y net © 2019, Ramsey Dow. All rights reserved.
+// SPDX-FileCopyrightText: © 2019 Ramsey Dow <yesmar@gmail.com>
 // SPDX-License-Identifier: BSD-2-Clause
 
 package net
